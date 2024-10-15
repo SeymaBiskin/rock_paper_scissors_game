@@ -64,7 +64,9 @@ Make sure you have the following installed on your machine:
 
 FastAPI automatically generates OpenAPI documentation for the API. You can access it via the following URLs:
 
-- **Swagger UI** (Interactive API documentation): 
+```
+http://localhost:8000/docs
+```
 
 ## API Endpoints
 

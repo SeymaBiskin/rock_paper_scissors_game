@@ -10,6 +10,62 @@ This project implements a simple "Rock, Paper, Scissors" game using FastAPI as t
 - Save and retrieve game state from a database.
 - OpenAPI support for API documentation.
 
+## Prerequisites
+
+Make sure you have the following installed on your machine:
+
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+## Setup and Running the Application
+
+1. **Clone the repository**:
+
+    ```bash
+    git clone https://github.com/yourusername/rock-paper-scissors-api.git
+    cd rock-paper-scissors-api
+    ```
+
+2. **Build the Docker image**:
+
+    Use Docker to build the image for the FastAPI application. This step creates a Docker image for the FastAPI backend and sets up the environment.
+
+    ```bash
+    docker-compose build
+    ```
+
+3. **Run the Docker containers**:
+
+    Once the image is built, start the application using Docker Compose:
+
+    ```bash
+    docker-compose up
+    ```
+
+4. **Apply Database Migrations**:
+
+    The project uses Alembic for database migrations. To set up the database (SQLite), apply the migrations as follows:
+
+    ```bash
+    docker-compose exec web alembic upgrade head
+    ```
+
+    This will create the necessary tables in the SQLite database.
+
+5. **Access the Application**:
+
+    Once the containers are up and running, you can access the FastAPI application at:
+
+    ```
+    http://localhost:8000
+    ```
+
+## Accessing the OpenAPI Documentation
+
+FastAPI automatically generates OpenAPI documentation for the API. You can access it via the following URLs:
+
+- **Swagger UI** (Interactive API documentation): 
+
 ## API Endpoints
 
 1. **Start Game** (POST `/game/start`)
